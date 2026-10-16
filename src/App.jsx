@@ -1,15 +1,16 @@
-
-import { useState } from 'react'
+ import { useState } from 'react'
 import './App.css'
 
+
 const products = [
-  { id: 1, name: 'Rice', category: 'Rice', unit: '1 kg', price: 75, emoji: '🍚' },
-  { id: 2, name: 'Toor Dal', category: 'Dal', unit: '1 kg', price: 140, emoji: '🫘' },
-  { id: 3, name: 'Cooking Oil', category: 'freedom sunflower Oil', unit: '1 litre', price: 185, emoji: '🫗' },
-  { id: 4, name: 'Bath Soap', category: 'Soaps', unit: '1 piece', price: 35, emoji: '🧼' },
-  { id: 5, name: 'Sugar', category: 'Groceries', unit: '1 kg', price: 45, emoji: '🍚' },
-  { id: 6, name: 'Wheat Flour', category: 'Groceries', unit: '1 kg', price: 45, emoji: '🌾' },
+  { id: 1, name: 'Rice', category: 'Rice', unit: '1 kg', price: 115, image: '/Mahaneya-General-Store/products/rice.jpg' },
+  { id: 2, name: 'Toor Dal', category: 'Dal', unit: '1 kg', price: 140, image: '/Mahaneya-General-Store/products/Toor%20dal.webp' },
+  { id: 3, name: 'Cooking Oil', category: 'freedom sunflower Oil', unit: '1 litre', price: 185, image: '/Mahaneya-General-Store/products/cooking%20oil.jpg' },
+  { id: 4, name: 'Bath Soap', category: 'Soaps', unit: '1 piece', price: 45, image: '/Mahaneya-General-Store/products/lux.jpg' },
+  { id: 5, name: 'Sugar', category: 'Groceries', unit: '1 kg', price: 50, image: '/Mahaneya-General-Store/products/sugar.jpg' },
+  { id: 6, name: 'Wheat Flour', category: 'Groceries', unit: '1 kg', price: 65, image: '/Mahaneya-General-Store/products/wheatflour.webp' },
 ]
+
 
 function App() {
   const [cart, setCart] = useState([])
@@ -41,7 +42,7 @@ function App() {
         .filter((item) => item.quantity > 0)
     )
   }
-  
+
   const total = cart.reduce(
   (sum, item) => sum + item.price * item.quantity,
   0
@@ -103,7 +104,9 @@ Thank you!
         <div className="product-grid">
           {products.map((product) => (
             <article className="product-card" key={product.id}>
-              <div className="product-emoji">{product.emoji}</div>
+               <div className="product-emoji">
+  <img src={product.image} alt={product.name} />
+</div>
               <h3>{product.name}</h3>
               <p>{product.unit}</p>
               <strong>₹{product.price}</strong>
