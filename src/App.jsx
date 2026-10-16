@@ -1,4 +1,5 @@
- import { useState } from 'react'
+ 
+import { useState } from 'react'
 import './App.css'
 
 
@@ -6,7 +7,7 @@ const products = [
   { id: 1, name: 'Rice', category: 'Rice', unit: '1 kg', price: 115, image: '/Mahaneya-General-Store/products/rice.jpg' },
   { id: 2, name: 'Toor Dal', category: 'Dal', unit: '1 kg', price: 140, image: '/Mahaneya-General-Store/products/Toor%20dal.webp' },
   { id: 3, name: 'Cooking Oil', category: 'freedom sunflower Oil', unit: '1 litre', price: 185, image: '/Mahaneya-General-Store/products/cooking%20oil.jpg' },
-  { id: 4, name: 'Bath Soap', category: 'Soaps', unit: '1 piece', price: 45, image: '/Mahaneya-General-Store/products/lux.jpg' },
+{ id: 4, name: 'Bath Soap', category: 'Soaps', unit: '1 piece', price: 45, image: '/Mahaneya-General-Store/products/lux2.jpg' },
   { id: 5, name: 'Sugar', category: 'Groceries', unit: '1 kg', price: 50, image: '/Mahaneya-General-Store/products/sugar.jpg' },
   { id: 6, name: 'Wheat Flour', category: 'Groceries', unit: '1 kg', price: 65, image: '/Mahaneya-General-Store/products/wheatflour.webp' },
 ]
