@@ -71,7 +71,7 @@ Please confirm product availability and my order.
 Thank you!
     `.trim()
 
-    const shopWhatsAppNumber = '8790891245'
+    const shopWhatsAppNumber = '918790891245'
 
     const whatsappUrl = `https://wa.me/${shopWhatsAppNumber}?text=${encodeURIComponent(message)}`
 
