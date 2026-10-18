@@ -478,3 +478,36 @@ footer p {
     font-size: 22px;
   }
 }
+
+
+.fulfilment-options {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 18px;
+  border: 1px solid #e8e5d9;
+  border-radius: 12px;
+  background: #f8f6ee;
+}
+
+.fulfilment-options label {
+  color: #174b35;
+  font-weight: 700;
+}
+
+.fulfilment-options select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d7dfd5;
+  border-radius: 8px;
+  background: white;
+  color: #174b35;
+  font: inherit;
+}
+
+.fulfilment-options p {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.6;
+}
