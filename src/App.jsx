@@ -15,6 +15,7 @@ const products = [
 
 function App() {
   const [cart, setCart] = useState([])
+  const [fulfilment, setFulfilment] = useState('Pickup')
 
   function addToCart(product) {
     setCart((currentCart) => {
@@ -55,6 +56,12 @@ function App() {
       alert('Please add products to your cart first!')
       return
     }
+    
+if (fulfilment === 'Home Delivery' && total < 500) {
+  alert('Home delivery is available only in Vinukonda for orders of ₹500 or more. Please add more products or select Shop Pickup.')
+  return
+}
+
 
     const message = `
 Hello Mahaneya General Store!
@@ -63,8 +70,10 @@ My Order:
 ${cart.map((item) => `${item.name} (${item.unit}) x ${item.quantity} = ₹${item.price * item.quantity}`).join('\n')}
 
 Total: ₹${total}
+ 
+Fulfilment: ${fulfilment}
+${fulfilment === 'Home Delivery' ? 'Delivery area: Vinukonda (please confirm my delivery address).' : 'Collection: Shop Pickup.'}
 
-Fulfilment: Pickup or Home Delivery
 Payment: Cash or UPI after confirmation
 
 Please confirm product availability and my order.
@@ -121,6 +130,22 @@ Thank you!
 
       <section id="cart" className="cart-section">
         <h2>Your Cart 🛒</h2>
+        
+<div className="fulfilment-options">
+  <label htmlFor="fulfilment">How would you like to receive your order?</label>
+  <select
+    id="fulfilment"
+    value={fulfilment}
+    onChange={(e) => setFulfilment(e.target.value)}
+  >
+    <option value="Pickup">Shop Pickup</option>
+    <option value="Home Delivery">Home Delivery (Vinukonda only)</option>
+  </select>
+  <p>
+    Home delivery is available only in Vinukonda for orders of ₹500 or more.
+  </p>
+</div>
+
 
         {cart.length === 0 ? (
           <p>Your cart is empty. Add some products!</p>
